@@ -1,11 +1,9 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include <model/variantmaptablemodel.h>
 #include <QQuickView>
-#include<QQmlContext>
+#include <QQmlContext>
 #include <listModel/localuser.h>
 #include <listModel/localuserlistmodel.h>
-#include <UserTableModel/localusertablemodel.h>
 int main(int argc, char *argv[])
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)

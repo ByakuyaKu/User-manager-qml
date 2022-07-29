@@ -16,18 +16,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Quick)
 
 set(PROJECT_SOURCES
         main.cpp
-        #model/abstractcolumn.h
-        model/abstractcolumn.cpp
-        #model/variantmaptablemodel.h
-        model/variantmaptablemodel.cpp
-        #model/simplecolumn.h
-        model/simplecolumn.cpp
-        #listModel/localuser.h
         listModel/localuser.cpp
-        #listModel/localuserlistmodel.h
         listModel/localuserlistmodel.cpp
-        #UserTableModel/localusertablemodel.h
-        UserTableModel/localusertablemodel.cpp
         qml.qrc
 )
 
