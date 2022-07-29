@@ -123,7 +123,6 @@ QList<LocalUser *> LocalUser::getLocalUsers()
     QList<LocalUser*> parsedLocalUsers = ParseLocalUsers(unparsedLocalUsers);
 
     return parsedLocalUsers;
-    //return ToQVariantList(parsedLocalUsers);
 }
 
 QStringList LocalUser::getUnparsedLocalUsers()
@@ -150,20 +149,10 @@ QStringList LocalUser::getUnparsedLocalUsers()
 QList<LocalUser *> LocalUser::ParseLocalUsers(QStringList &usersList)
 {
     QList<LocalUser*> parsedUsersList;
-    //qInfo() << usersList[0];
     for(int i = 0; i < usersList.length()-1; i++)
     {
-        //qInfo() << usersList[i];
         QStringList userInfo = usersList[i].split(QLatin1Char(':'));
-        //LocalUser *curUser = new LocalUser(this);
         LocalUser *curUser = new LocalUser(userInfo[0], userInfo[2], userInfo[3], userInfo[4], userInfo[5], userInfo[6]);
-//        userInfo[0], userInfo[2], userInfo[3], userInfo[4], userInfo[5], userInfo[6]
-//                curUser->setProperty("UID", "1");
-//                        curUser->setProperty("GID", "2");
-//                        curUser->setProperty("FullName", "eldest");
-//                        curUser->setProperty("RegistratorName", "Dir");
-//                        curUser->setProperty("HomeDir", "Dir");
-//                        curUser->setProperty("LoginEngine", "33");
         parsedUsersList.append(curUser);
 
         //qInfo() << (curUser->HomeDir() + " | " + curUser->FullName() + " | " + curUser->GID() + " | " + curUser->LoginEngine() + curUser->UID() + " | " + " || ");

@@ -7,6 +7,7 @@
 #include <listModel/localuser.h>
 #include <QQmlListProperty>
 
+
 class LocalUserListModel : public QObject
 {
     Q_PROPERTY(QQmlListProperty<LocalUser> data READ data NOTIFY dataChanged)

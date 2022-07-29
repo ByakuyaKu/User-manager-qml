@@ -26,6 +26,8 @@ set(PROJECT_SOURCES
         listModel/localuser.cpp
         #listModel/localuserlistmodel.h
         listModel/localuserlistmodel.cpp
+        #UserTableModel/localusertablemodel.h
+        UserTableModel/localusertablemodel.cpp
         qml.qrc
 )
 

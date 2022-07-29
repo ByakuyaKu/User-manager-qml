@@ -6,6 +6,7 @@
 #include <QVariant>
 class SimpleColumn : public AbstractColumn
 {
+
 public:
     SimpleColumn(QString name);
 

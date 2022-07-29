@@ -7,18 +7,9 @@
 
 LocalUserListModel::LocalUserListModel(QObject *parent) : QObject(parent)
 {
-//    LocalUser *user = new LocalUser(this);
-//        user->setProperty("UID", "1");
-//        user->setProperty("GID", "2");
-//        user->setProperty("FullName", "eldest");
-//        user->setProperty("RegistratorName", "Dir");
-//        user->setProperty("HomeDir", "Dir");
-//        user->setProperty("LoginEngine", "33");
         LocalUser u;
         QList<LocalUser*> users = u.getLocalUsers();
         _localUsers << users;
-        //_localUsers << user;
-        //_localUsers << user;
 }
 
 //QHash<int, QByteArray> LocalUserListModel::roleNames() const
@@ -39,11 +30,6 @@ QQmlListProperty<LocalUser> LocalUserListModel::data()
 
 void LocalUserListModel::add(LocalUser *user)
 {
-//    LocalUser *user = new LocalUser(this);
-//        user->setProperty("color", "skyblue");
-//        user->setProperty("text", "new");
-//        _localUsers.append(user);
-
     _localUsers.append(user);
         emit dataChanged();
 }

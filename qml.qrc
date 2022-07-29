@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>UIElements/CustomTabBtn.qml</file>
         <file>UIElements/CustomBtn.qml</file>
+        <file>UIElements/UserListElem.qml</file>
     </qresource>
 </RCC>
