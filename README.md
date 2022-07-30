@@ -15,5 +15,7 @@
 
 ### Что было сделано:
 * [Модель](https://github.com/ByakuyaKu/User-manager-qml/tree/main/listModel) для представления ListView
-* частично графический интерфейс
+* Частично графический интерфейс
+* UI элементы [кнопка](https://github.com/ByakuyaKu/User-manager-qml/blob/main/UIElements/CustomBtn.qml) и [кнопка для TabBar](https://github.com/ByakuyaKu/User-manager-qml/blob/main/UIElements/CustomTabBtn.qml)
+* Реализовано отображение пользователей при помощи команды "$less /etc/passwd" в классе [LocalUser](https://github.com/ByakuyaKu/User-manager-qml/blob/main/listModel/localuser.cpp#:~:text=QStringList%20LocalUser%3A%3AgetUnparsedLocalUsers)
 
