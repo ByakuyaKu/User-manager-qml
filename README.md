@@ -11,7 +11,7 @@
 Модуль для управлениями пользователями и группами.
 Ранее разработка велась в старом [репозитории](https://github.com/ByakuyaKu/User-manager).
 
-![image](https://user-images.githubusercontent.com/31956595/181860102-ed7d92f1-3407-40c9-93dd-ee5749e2cf12.png)
+![image](https://user-images.githubusercontent.com/31956595/181862689-68ed87a2-8755-4b31-83ea-b769c19a5b23.png)
 
 ### Что было сделано:
 * [Модель](https://github.com/ByakuyaKu/User-manager-qml/tree/main/listModel) для представления ListView
