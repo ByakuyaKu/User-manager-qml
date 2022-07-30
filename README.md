@@ -9,6 +9,7 @@
   
 ## О проекте
 Модуль для управлениями пользователями и группами.
+Ранее разработка велась в старом [репозитории](https://github.com/ByakuyaKu/User-manager).
 
 ![image](https://user-images.githubusercontent.com/31956595/181860102-ed7d92f1-3407-40c9-93dd-ee5749e2cf12.png)
 
