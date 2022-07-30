@@ -18,6 +18,7 @@ set(PROJECT_SOURCES
         main.cpp
         listModel/localuser.cpp
         listModel/localuserlistmodel.cpp
+        DBusLib/dbuslib.h
         qml.qrc
 )
 
