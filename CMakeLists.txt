@@ -13,12 +13,21 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Quick)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Quick)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS AccountsService)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS DBus)
+
+include_directories(${DBUS_INCLUDE_DIRS})
+
+#add_executable(mydbus DBusLib/dbuslib.cpp)
+#target_link_libraries(mydbus PRIVATE Qt${QT_VERSION_MAJOR}::Dbus)
 
 set(PROJECT_SOURCES
         main.cpp
         listModel/localuser.cpp
         listModel/localuserlistmodel.cpp
-        DBusLib/dbuslib.h
+        DBusLib/dbuslib.cpp
+        groupsTreeModel/treeitem.cpp
+        groupsTreeModel/treemodel.cpp
         qml.qrc
 )
 
@@ -57,7 +66,10 @@ set_target_properties(UserManagerQML PROPERTIES
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
-
+target_link_libraries(UserManagerQML INTERFACE
+    Qt${QT_VERSION_MAJOR}::Core
+    Qt${QT_VERSION_MAJOR}::Quick
+    Qt${QT_VERSION_MAJOR}::DBus)
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_import_qml_plugins(UserManagerQML)
     qt_finalize_executable(UserManagerQML)

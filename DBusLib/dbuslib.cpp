@@ -1,28 +1,39 @@
 #include "dbuslib.h"
 #include <QDebug>
+
 DBusLib::DBusLib(QObject *parent) : QObject(parent)
 {
-
+    _sysusersd = connectToInterface("org.freedesktop.hostname1", "/org/freedesktop/hostname1");
 }
 
-DBusLib::DBusLib(QDBusInterface sysusersd)
+DBusLib::DBusLib(QDBusInterface* sysusersd)
 {
-    _sysusersd = &sysusersd;
+    _sysusersd = sysusersd;
 }
 
-QDBusInterface* DBusLib::connectToInterface(QString serviceName, QString path) const
+DBusLib::~DBusLib()
+{
+    delete _sysusersd;
+}
+
+QDBusInterface* DBusLib::connectToInterface(QString serviceName, QString path)
 {
     // find our remote
-    QDBusInterface* qDBusInterface = new QDBusInterface(serviceName, path, serviceName, QDBusConnection::systemBus());
-    if (!qDBusInterface->isValid()) {
+    QDBusInterface* iface = new QDBusInterface(serviceName, path, serviceName, QDBusConnection::sessionBus(), this);
+    if (!iface->isValid()) {
         qInfo() << "error";
     }
 
-    return qDBusInterface;
+    return iface;
 }
 
-void DBusLib::setSysusersd(QDBusInterface iface)
+void DBusLib::setSysusersd(QDBusInterface* iface)
 {
-    _sysusersd = &iface;
+    _sysusersd = iface;
+}
+
+QDBusInterface *DBusLib::getSysusersd()
+{
+    return _sysusersd;
 }
 
